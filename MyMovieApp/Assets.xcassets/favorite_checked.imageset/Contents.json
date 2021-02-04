@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "favorite-icon-715x715.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
