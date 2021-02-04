@@ -26,6 +26,8 @@ final class MovieListViewController: UIViewController {
     @IBOutlet weak var movieListTableView: UITableView?
     @IBOutlet weak var favoriteButton: UIBarButtonItem?
     
+    private var presenter: MovieListPresenterInput?
+    
     private var movieListViewModel: MovieListViewModel? {
         didSet {
             movieListTableView?.reloadData()
@@ -36,22 +38,12 @@ final class MovieListViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         title = Constants.navTitle
-        fetchMovieList()
-        // Do any additional setup after loading the view.
+        setupPresenter()
     }
     
-    private func fetchMovieList() {
-        let endpoint = MovieListEndpoint()
-        NetworkManager().request(endPoint: endpoint, generalType: MovieList.self) { [weak self] result in
-            switch result {
-            case .success(let movieList):
-                MovieListPersistanceStore.deleteMovieList()
-                MovieListPersistanceStore.saveMovieList(movieList: movieList.results)
-                self?.movieListViewModel = MovieListViewModel(movies: MovieListPersistanceStore.fetchMovieList())
-            case .failure:
-                self?.movieListViewModel = MovieListViewModel(movies: MovieListPersistanceStore.fetchMovieList())
-            }
-        }
+    func setupPresenter() {
+        presenter = MovieListRouter.createMovieListPresenter(self)
+        presenter?.fetchMovieList()
     }
 
     @IBAction private func didTapFavourite(_ sender: Any) {
@@ -83,7 +75,7 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    
+        
         guard  let cell = tableView.dequeueReusableCell(withIdentifier: ReuseIdentifier.movieListReuseIdentifer , for: indexPath) as? MovieListTableViewCell else {
             return UITableViewCell()
         }
@@ -99,8 +91,18 @@ extension MovieListViewController: MovieListTableViewCellDelegate {
     
     func saveAsFavorite(index: Int) {
         guard let movie = movieListViewModel?.moviesAtIndex(index) else { return  }
-        MovieListPersistanceStore.saveAsFavorite(movie: movie)
-        movieListViewModel = MovieListViewModel(movies: MovieListPersistanceStore.fetchMovieList())
+        presenter?.saveFavorities(movie: movie)
+    }
+}
+
+extension MovieListViewController: MovieListPresenterOutput {
+    
+    func displayMovieViewModel(_ vm: MovieListViewModel) {
+        movieListViewModel = vm
+    }
+    
+    func displayFavouriteMovieSuccess(_ vm: MovieListViewModel) {
+        movieListViewModel = vm
     }
 }
 

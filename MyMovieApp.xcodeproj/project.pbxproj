@@ -13,6 +13,10 @@
 		F6271F5225CC08E600242A54 /* FavoriteMovie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6271F5125CC08E600242A54 /* FavoriteMovie+CoreDataProperties.swift */; };
 		F6271F5325CC08E600242A54 /* FavoriteMovie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6271F5025CC08E600242A54 /* FavoriteMovie+CoreDataClass.swift */; };
 		F6271F5A25CC256A00242A54 /* FavoriteMovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6271F5925CC256A00242A54 /* FavoriteMovieListViewModel.swift */; };
+		F6271F6A25CC372E00242A54 /* MovieListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6271F6925CC372E00242A54 /* MovieListRouter.swift */; };
+		F6271F6F25CC377200242A54 /* MovieListBoundaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6271F6E25CC377200242A54 /* MovieListBoundaries.swift */; };
+		F6271F7425CC39A800242A54 /* MovieListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6271F7325CC39A800242A54 /* MovieListInteractor.swift */; };
+		F6271F7925CC3A3000242A54 /* MovieListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6271F7825CC3A3000242A54 /* MovieListPresenter.swift */; };
 		F66269E725CBA6DA009E08B2 /* MovieListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66269E625CBA6DA009E08B2 /* MovieListEndpoint.swift */; };
 		F66269F525CBA862009E08B2 /* MovieListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66269F425CBA862009E08B2 /* MovieListTableViewCell.swift */; };
 		F6626A0C25CBABA6009E08B2 /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6626A0A25CBABA6009E08B2 /* Movie+CoreDataClass.swift */; };
@@ -66,6 +70,10 @@
 		F6271F5025CC08E600242A54 /* FavoriteMovie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavoriteMovie+CoreDataClass.swift"; path = "/Users/Guruprasath/Documents/MyMovieApp/MyMovieApp/Models/CoreDataModels/FavoriteMovie+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		F6271F5125CC08E600242A54 /* FavoriteMovie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavoriteMovie+CoreDataProperties.swift"; path = "/Users/Guruprasath/Documents/MyMovieApp/MyMovieApp/Models/CoreDataModels/FavoriteMovie+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		F6271F5925CC256A00242A54 /* FavoriteMovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteMovieListViewModel.swift; sourceTree = "<group>"; };
+		F6271F6925CC372E00242A54 /* MovieListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListRouter.swift; sourceTree = "<group>"; };
+		F6271F6E25CC377200242A54 /* MovieListBoundaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListBoundaries.swift; sourceTree = "<group>"; };
+		F6271F7325CC39A800242A54 /* MovieListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListInteractor.swift; sourceTree = "<group>"; };
+		F6271F7825CC3A3000242A54 /* MovieListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListPresenter.swift; sourceTree = "<group>"; };
 		F66269E625CBA6DA009E08B2 /* MovieListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListEndpoint.swift; sourceTree = "<group>"; };
 		F66269F425CBA862009E08B2 /* MovieListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewCell.swift; sourceTree = "<group>"; };
 		F6626A0A25CBABA6009E08B2 /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -146,6 +154,30 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F6271F6625CC36F200242A54 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F6271F6925CC372E00242A54 /* MovieListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F6271F6725CC370000242A54 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F6271F7825CC3A3000242A54 /* MovieListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F6271F6825CC370700242A54 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F6271F7325CC39A800242A54 /* MovieListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		F66269E225CBA6C7009E08B2 /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,7 +225,6 @@
 		F6FDABCF25CAD46100B7A053 = {
 			isa = PBXGroup;
 			children = (
-				F66269F325CBA841009E08B2 /* TableViewCells */,
 				F6FDABDA25CAD46100B7A053 /* MyMovieApp */,
 				F6FDABF425CAD46400B7A053 /* MyMovieAppTests */,
 				F6FDABFF25CAD46500B7A053 /* MyMovieAppUITests */,
@@ -216,6 +247,9 @@
 		F6FDABDA25CAD46100B7A053 /* MyMovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				F6271F6825CC370700242A54 /* Interactor */,
+				F6271F6725CC370000242A54 /* Presenter */,
+				F6271F6625CC36F200242A54 /* Router */,
 				F6626A4425CBC77D009E08B2 /* CoreData */,
 				F66269E225CBA6C7009E08B2 /* Endpoint */,
 				F6FDAC3025CADFB800B7A053 /* Protocols */,
@@ -255,6 +289,7 @@
 		F6FDAC1125CAD49600B7A053 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F66269F325CBA841009E08B2 /* TableViewCells */,
 				F6FDABDF25CAD46100B7A053 /* MovieListViewController.swift */,
 				F6626A3F25CBC3EA009E08B2 /* FavoritesViewController.swift */,
 			);
@@ -292,6 +327,7 @@
 			children = (
 				F6FDAC3125CADFC900B7A053 /* Requestable.swift */,
 				F6FDAC3925CADFEC00B7A053 /* EndPoint.swift */,
+				F6271F6E25CC377200242A54 /* MovieListBoundaries.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -536,12 +572,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6626A4025CBC3EA009E08B2 /* FavoritesViewController.swift in Sources */,
+				F6271F7425CC39A800242A54 /* MovieListInteractor.swift in Sources */,
 				F6271F5325CC08E600242A54 /* FavoriteMovie+CoreDataClass.swift in Sources */,
 				F6FDABE025CAD46100B7A053 /* MovieListViewController.swift in Sources */,
 				F6FDABDC25CAD46100B7A053 /* AppDelegate.swift in Sources */,
+				F6271F6F25CC377200242A54 /* MovieListBoundaries.swift in Sources */,
 				F6626A1425CBABFC009E08B2 /* Movie.swift in Sources */,
 				F6FDAC2C25CADF9C00B7A053 /* NetworkManager.swift in Sources */,
 				F6FDAC3225CADFC900B7A053 /* Requestable.swift in Sources */,
+				F6271F7925CC3A3000242A54 /* MovieListPresenter.swift in Sources */,
 				F6626A1C25CBAD7B009E08B2 /* MovieListViewModel.swift in Sources */,
 				F6626A0D25CBABA6009E08B2 /* Movie+CoreDataProperties.swift in Sources */,
 				F6FDAC3A25CADFEC00B7A053 /* EndPoint.swift in Sources */,
@@ -549,6 +588,7 @@
 				F66269F525CBA862009E08B2 /* MovieListTableViewCell.swift in Sources */,
 				F6626A0C25CBABA6009E08B2 /* Movie+CoreDataClass.swift in Sources */,
 				F6271F5225CC08E600242A54 /* FavoriteMovie+CoreDataProperties.swift in Sources */,
+				F6271F6A25CC372E00242A54 /* MovieListRouter.swift in Sources */,
 				F6626A4625CBC78F009E08B2 /* CoreDataManager.swift in Sources */,
 				F6626A4E25CBC851009E08B2 /* MovieListPersistanceStore.swift in Sources */,
 				F6271F5A25CC256A00242A54 /* FavoriteMovieListViewModel.swift in Sources */,
