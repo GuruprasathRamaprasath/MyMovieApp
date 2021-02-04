@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 protocol EndpointType {
-    var url: URL? { get set }
+    var url: URL? { get }
     var httpMethod: HTTPMethod { get set }
     var parameters: [String: Any]?  { get set }
     var encoding: URLEncodedFormParameterEncoder.Destination { get set }
