@@ -15,6 +15,8 @@ import CoreData
 
 final class MovieListViewController: UIViewController {
     
+    // MARK:- CONSTANTS
+    
     enum ReuseIdentifier {
         static let movieListReuseIdentifer = "MovieListTableViewCell"
     }
@@ -26,8 +28,11 @@ final class MovieListViewController: UIViewController {
     }
     
     // MARK:- IBOUTLETS
+    
     @IBOutlet weak var movieListTableView: UITableView?
     @IBOutlet weak var favoriteButton: UIBarButtonItem?
+    
+    // MARK:- VARIABLES
     
     private var presenter: MovieListPresenterInput?
     
@@ -36,6 +41,8 @@ final class MovieListViewController: UIViewController {
             movieListTableView?.reloadData()
         }
     }
+    
+    // MARK:- VIEW LIFECYCLE
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,13 +51,17 @@ final class MovieListViewController: UIViewController {
         setupPresenter()
     }
     
-    func setupPresenter() {
-        presenter = MovieListRouter.createMovieListPresenter(self)
-        presenter?.fetchMovieList()
-    }
+    // MARK:- IBACTIONS
 
     @IBAction private func didTapFavourite(_ sender: Any) {
        presentFavoriteViewController()
+    }
+    
+    // MARK:- METHODS
+    
+    private func setupPresenter() {
+        presenter = MovieListRouter.createMovieListPresenter(self)
+        presenter?.fetchMovieList()
     }
     
     private func presentFavoriteViewController() {
