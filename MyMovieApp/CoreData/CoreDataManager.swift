@@ -8,6 +8,11 @@
 import Foundation
 import CoreData
 
+
+/**
+ Core Data Stack
+ */
+
 class CoreDataManager {
     
     // MARK: - Core Data stack

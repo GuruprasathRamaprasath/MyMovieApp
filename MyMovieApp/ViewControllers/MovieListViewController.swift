@@ -8,7 +8,10 @@
 import UIKit
 import CoreData
 
-/* Movie List ViewController retrieves latest movie list */
+/**
+ Movie List ViewController displays list of latest Movies played
+ */
+
 
 final class MovieListViewController: UIViewController {
     

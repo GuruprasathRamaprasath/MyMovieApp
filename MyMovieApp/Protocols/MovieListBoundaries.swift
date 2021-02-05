@@ -8,12 +8,27 @@
 import Foundation
 
 protocol MovieListPresenterInput: class {
+    /**
+     Fetch MovieList
+     */
     func fetchMovieList()
+    
+    /**
+     Save Favorites
+     */
     func saveFavorities(movie: MovieViewModel)
 }
 
 protocol MovieListInteractorInput: class {
+    /**
+     Fetch MovieList
+     */
     func fetchMovieList()
+    
+    
+    /**
+     Save Favorites
+     */
     func saveFavorities(movie: MovieListViewModel)
 }
 

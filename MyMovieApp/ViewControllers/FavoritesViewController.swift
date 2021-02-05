@@ -7,6 +7,11 @@
 
 import UIKit
 
+
+/**
+ Favorites View Controller Displays Saved Favourite Movies
+ */
+
 class FavoritesViewController: UIViewController {
     
     enum ReuseIdentifier {

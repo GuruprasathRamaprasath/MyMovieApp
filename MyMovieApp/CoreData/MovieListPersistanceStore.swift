@@ -8,6 +8,10 @@
 import Foundation
 import CoreData
 
+/**
+ All Movie related persistance operations
+ */
+
 struct MovieListPersistanceStore {
     
     static func saveMovieList(movieList: [MovieResult]) {
