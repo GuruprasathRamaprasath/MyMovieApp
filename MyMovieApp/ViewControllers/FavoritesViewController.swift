@@ -20,12 +20,16 @@ class FavoritesViewController: UIViewController {
     
     private var favMovieListViewModel: FavoriteMovieListViewModel? {
         didSet {
+            guard let numberOfRows = favMovieListViewModel?.numberOfRows else { return }
+            favoriteTableView?.isHidden = numberOfRows <= 0
+            noFavouritesLabel?.isHidden = numberOfRows > 0
             favoriteTableView?.reloadData()
         }
     }
     
     // MARK:- IBOUTLETS
     @IBOutlet weak var favoriteTableView: UITableView?
+    @IBOutlet weak var noFavouritesLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()

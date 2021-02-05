@@ -16,6 +16,7 @@ extension MovieListInteractor: MovieListInteractorInput {
     
     func fetchMovieList() {
         let endpoint = MovieListEndpoint()
+        
         NetworkManager().request(endPoint: endpoint, generalType: MovieList.self) { [weak self] result in
             switch result {
             case .success(let movieList):

@@ -8,7 +8,13 @@
 import XCTest
 @testable import MyMovieApp
 
-class MyMovieAppTests: XCTestCase {
+class MyMovieAppTests: XCTestCase, Mockable {
+    
+    
+    override class func setUp() {
+        super.setUp()
+       
+    }
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

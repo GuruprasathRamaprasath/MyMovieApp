@@ -164,23 +164,32 @@
                                     <outlet property="delegate" destination="O1Y-88-ca6" id="1Tt-tR-9JA"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Favourites found!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXQ-cp-oMI">
+                                <rect key="frame" x="79" y="431.5" width="256.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xJ8-uC-Bla"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xJ8-uC-Bla" firstAttribute="trailing" secondItem="JpT-fD-UO3" secondAttribute="trailing" id="7JA-HX-DbB"/>
+                            <constraint firstItem="BXQ-cp-oMI" firstAttribute="centerX" secondItem="ULL-AW-S9N" secondAttribute="centerX" id="HNA-OC-sob"/>
                             <constraint firstItem="xJ8-uC-Bla" firstAttribute="bottom" secondItem="JpT-fD-UO3" secondAttribute="bottom" id="LTs-BL-guN"/>
                             <constraint firstItem="JpT-fD-UO3" firstAttribute="leading" secondItem="ULL-AW-S9N" secondAttribute="leading" id="MZv-Zo-nvQ"/>
                             <constraint firstItem="JpT-fD-UO3" firstAttribute="top" secondItem="ULL-AW-S9N" secondAttribute="top" id="P8X-5E-7ao"/>
+                            <constraint firstItem="BXQ-cp-oMI" firstAttribute="centerY" secondItem="ULL-AW-S9N" secondAttribute="centerY" id="ej7-OH-1W1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="favoriteTableView" destination="JpT-fD-UO3" id="9qJ-cg-Z8m"/>
+                        <outlet property="noFavouritesLabel" destination="BXQ-cp-oMI" id="bG0-lP-yv6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aj8-dX-cf7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671" y="78"/>
+            <point key="canvasLocation" x="1669.5652173913045" y="77.678571428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nZ2-CP-6Us">

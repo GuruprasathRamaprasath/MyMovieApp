@@ -10,3 +10,4 @@ import Foundation
 protocol Requestable {
     func request<T: Decodable>(endPoint: EndpointType, generalType: T.Type, completion: @escaping (Result<T, Error>) -> Void)
 }
+
