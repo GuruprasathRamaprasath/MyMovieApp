@@ -58,17 +58,18 @@ struct MovieListPersistanceStore {
     }
     
     static func saveAsFavorite(movie: MovieViewModel) {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: Movie.self))
-        fetchRequest.predicate = NSPredicate(format: "movieId = %@", movie.movie.movieId)
-        let favMovie = NSEntityDescription.insertNewObject(forEntityName: "FavoriteMovie",
-                                                           into: CoreDataManager.shared.persistentContainer.viewContext) as? FavoriteMovie
-        favMovie?.movieId = movie.movie.movieId
-        favMovie?.movieTitle = movie.movie.movieTitle
-        favMovie?.imageUrl = movie.movie.imageUrl
-        do {
-            try CoreDataManager.shared.persistentContainer.viewContext.save()
-        } catch {
-            print("Storing data Failed")
+        
+        if !isFavoriteMovies(movieId: movie.movie.movieId) {
+            let favMovie = NSEntityDescription.insertNewObject(forEntityName: "FavoriteMovie",
+                                                               into: CoreDataManager.shared.persistentContainer.viewContext) as? FavoriteMovie
+            favMovie?.movieId = movie.movie.movieId
+            favMovie?.movieTitle = movie.movie.movieTitle
+            favMovie?.imageUrl = movie.movie.imageUrl
+            do {
+                try CoreDataManager.shared.persistentContainer.viewContext.save()
+            } catch {
+                print("Storing data Failed")
+            }
         }
     }
     
